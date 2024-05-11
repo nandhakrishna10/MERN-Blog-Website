@@ -1,0 +1,744 @@
+/* app.css */
+
+/* Global Styles */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    color: #222;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    padding: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+header a.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+header nav {
+    display: flex;
+    gap: 24px;
+}
+
+/* Post Styles */
+
+div.post {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+@media screen and (min-width: 700px) {
+    div.post {
+        grid-template-columns: .9fr 1.1fr;
+    }
+}
+
+div.post div.texts h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+div.post div.texts a {
+    text-decoration: none;
+    color: inherit;
+}
+
+div.post p.info {
+    margin: 24px 0;
+    color: #888;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+}
+
+div.post p.info a.author {
+    color: #333;
+}
+
+div.post p.summary {
+    margin: 10px 0;
+    line-height: 1.8rem;
+}
+
+
+
+/* RegisterPage Styles */
+
+:root {
+    --form-control-color: rebeccapurple;
+    --form-control-disabled: #959495;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+form.register {
+    place-content: top;
+    min-height: 10vh;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+}
+
+form.register h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form.register input[type="text"],
+form.register input[type="password"],
+form.register label {
+    display: block;
+    width: 100%;
+}
+
+form.register input[type="text"],
+form.register input[type="password"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+form.register label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+form.register label input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 5px; /* Change border-radius to make it more rectangular */
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+    margin-right: 10px; /* Add space between checkbox and text */
+}
+
+form.register label input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+form.register label input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+form.register label input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #6faef2; /* Change background color when checked */
+}
+
+form.register label input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #fff; /* Change color of checkmark when checked */
+    border-radius: 50%;
+}
+
+form.register label span {
+    font-size: 16px;
+}
+
+form.register label:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+form.register button {
+    cursor: pointer;
+    width: 100%;
+    background-color: #007bff;
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+form.register button:hover {
+    background-color: #0056b3;
+}
+
+form.register .error {
+    color: #dc3545;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* More space between checkboxes */
+form.register div.preferences label {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+.form-control + .form-control {
+    margin-top: 1em;
+}
+
+.form-control--disabled {
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+
+/* LoginPage Styles */
+
+.login {
+    place-content: center;
+    min-height: 10vh;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+}
+
+.login h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.login button {
+    cursor: pointer;
+    width: 100%;
+    background-color: #007bff;
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.login button:hover {
+    background-color: #0056b3;
+}
+
+.login .error {
+    color: #dc3545;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* IndexPage Styles */
+
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .posts-container p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  .posts-container p.no-posts {
+    margin-top: 20px;
+  }
+  
+/* CreatePost Styles */
+
+.create-post-form {
+    max-width: 950px; /* Adjust the max-width if needed */
+    margin: 0 auto;
+    padding: 20px 40px; /* Adjust the padding to make the form wider on both sides */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .create-post-form input[type="text"],
+  .create-post-form input[type="file"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .file-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .choose-file-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .choose-file-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-input-container input[type="file"] {
+    display: none;
+  }
+  
+  .preview-image {
+    max-width: 100px;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+  
+  .create-post-form button {
+    width: 100%;
+    background-color: #007bff;
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-post-form button:hover {
+    background-color: #0056b3;
+  }
+  
+/* EditPost Styles */
+
+.edit-post-form {
+    max-width: 950px; /* Adjust the max-width if needed */
+    margin: 0 auto;
+    padding: 20px 40px; /* Adjust the padding to make the form wider on both sides */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .edit-post-form .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .edit-post-form input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .edit-post-form input[type="file"] {
+    width: calc(100% - 22px);
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .edit-post-form .file-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .edit-post-form .choose-file-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-post-form .choose-file-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .edit-post-form .file-input-container input[type="file"] {
+    display: none;
+  }
+  
+  .edit-post-form .preview-image {
+    max-width: 100px;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+  
+  .edit-post-form button {
+    width: 100%;
+    background-color: #007bff;
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-post-form button:hover {
+    background-color: #0056b3;
+  }
+  
+
+/* Post Page Styles */
+.post-page {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-page .header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 350px;
+    align-items: center;
+    text-align: center; /* Center align header text */
+}
+
+.post-page .likes {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Move likes button and counter to the far right */
+}
+
+.post-page .likes button.like-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.post-page .meta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-page .meta time {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.post-page .meta .author {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.post-page .edit-row {
+    margin-top: 20px;
+}
+
+.post-page .edit-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.post-page .edit-btn svg {
+    height: 20px;
+}
+
+.post-page .image {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.post-page .image img {
+    max-width: 100%; /* Set maximum width to 100% */
+    height: auto;
+    object-fit: cover;
+}
+
+.post-page .content-container {
+    background-color: black; /* Background color for content container */
+    padding: 20px; /* Padding around content */
+    border-radius: 10px; /* Border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Box shadow */
+    margin-bottom: 20px; /* Add some space between content and comments */
+}
+
+.post-page .content {
+    margin-bottom: 20px; /* Add some space between content and comments */
+}
+
+.post-page .content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.post-page .content h2 {
+    font-size: 1.8rem; /* Increase font size for headings */
+    margin-bottom: 10px;
+}
+
+/* Post Page Styles */
+.post-page {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-page .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center; /* Center align header text */
+}
+
+.post-page .likes {
+    display: flex;
+    align-items: center;
+}
+
+.post-page .likes button.like-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 24px; /* Increase padding */
+    border: none;
+    border-radius: 25px; /* Increase border radius */
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.post-page .likes button.like-btn:hover {
+    background-color: #2980b9; /* Change background color on hover */
+}
+
+.post-page .meta {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-page .meta time {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.post-page .meta .author {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.post-page .edit-row {
+    margin-top: 20px;
+}
+
+.post-page .edit-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px; /* Increase padding */
+    border-radius: 25px; /* Increase border radius */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.post-page .edit-btn svg {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.post-page .edit-btn:hover {
+    background-color: #555; /* Change background color on hover */
+}
+
+.post-page .image {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.post-page .image img {
+    max-width: 100%; /* Set maximum width to 100% */
+    height: auto;
+    object-fit: cover;
+}
+
+.post-page .content-container {
+    background-color: #fff; /* Background color for content container */
+    padding: 20px; /* Padding around content */
+    border-radius: 10px; /* Border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    margin-bottom: 20px; /* Add some space between content and comments */
+}
+
+.post-page .content {
+    margin-bottom: 20px; /* Add some space between content and comments */
+}
+
+.post-page .content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    width: 100%; /* Expand text box width */
+}
+
+.post-page .content h2 {
+    font-size: 1.8rem; /* Increase font size for headings */
+    margin-bottom: 10px;
+}
+
+.post-page .comments {
+    margin-top: 20px;
+}
+
+.post-page .comment {
+    margin-bottom: 15px;
+}
+
+.post-page .comment p {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.post-page .comment time {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.post-page .comment-textarea {
+    width: 100%;
+    height: 100px; /* Set fixed height */
+    resize: none; /* Disable resizing */
+    margin-bottom: 10px; /* Adjust margin */
+    padding: 10px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+  }
+
+  
+  .post-page button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    background-color: #3498db; /* Blue color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .post-page button[type="submit"]:hover {
+    background-color: #2980b9; /* Darker shade of blue on hover */
+  }
+  

@@ -1,0 +1,45 @@
+/* Header */
+header {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333; /* Dark gray */
+    text-decoration: none;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    margin-right: 20px;
+    color: #333; /* Dark gray */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    color: #007bff; /* Blue */
+  }
+  
+  /* Logout link */
+  .logout-link {
+    color: #dc3545; /* Red */
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  .logout-link:hover {
+    text-decoration: underline;
+  }
+  

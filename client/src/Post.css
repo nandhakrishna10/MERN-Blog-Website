@@ -1,0 +1,9 @@
+.category {
+    font-weight: bold; /* Make text bold */
+    color: #ff5733; /* Set a different color */
+    display: inline-block; /* Display as inline-block */
+    padding: 5px 10px; /* Add padding */
+    border-radius: 50%; /* Make it a circle */
+    background-color: #f1f1f1; /* Set background color */
+  }
+  

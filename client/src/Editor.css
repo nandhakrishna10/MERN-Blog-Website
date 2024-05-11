@@ -1,0 +1,18 @@
+/* Editor Styles */
+
+.content {
+    margin-top: 20px; /* Adjust margin top as needed */
+  }
+  
+  /* Tooltip Styles */
+  .tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 9999;
+    pointer-events: none; /* Ensure tooltip doesn't interfere with mouse events */
+  }
+  
